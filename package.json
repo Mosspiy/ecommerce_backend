@@ -6,7 +6,7 @@
     "start": "node server.js",
   "dev": "nodemon server.js",
   "migrate": "npx sequelize-cli db:migrate"
-}
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
