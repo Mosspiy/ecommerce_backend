@@ -1,29 +1,16 @@
-{
-  "development": {
-    "username": "postgres",
-    "password": "password",
-    "database": "ecommerce_dev",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "test": {
-    "username": "postgres",
-    "password": "password",
-    "database": "ecommerce_test",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+module.exports = {
+  development: {
+    username: process.env.DB_USER || "root",
+    password: process.env.DB_PASS || "1234",
+    database: process.env.DB_NAME || "ecommerce_db",
+    host: process.env.DB_HOST || "127.0.0.1",
+    dialect: "mysql"
   },
   production: {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
-    dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
+    dialect: "mysql"
   }
-}
+};
