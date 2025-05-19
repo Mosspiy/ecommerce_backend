@@ -1,17 +1,13 @@
+require('dotenv').config(); // ดึง .env เข้ามาใช้
+
 module.exports = {
   development: {
-    username: 'ecommerce_6fno_user',
-    password: 'CAzMSHfV7BIvQoBfFgh2ThE0ry0R70tC',
-    database: 'ecommerce_6fno',
-    host: 'dpg-d0lihd1r0fns738ducig-a',
-    port: 5432,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
     dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, 
-      }
-    }
   },
   production: {
     use_env_variable: 'DATABASE_URL',
@@ -19,7 +15,7 @@ module.exports = {
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false,
+        rejectUnauthorized: false // สำคัญสำหรับ Render
       }
     }
   }
