@@ -1,16 +1,13 @@
 module.exports = {
   development: {
-    username: process.env.DB_USER || 'root',
-    password: process.env.DB_PASS || '1234',
-    database: process.env.DB_NAME || 'ecommerce_db',
-    host: process.env.DB_HOST || '127.0.0.1',
-    dialect: process.env.DB_DIALECT || 'mysql'
+    username: 'your_db_user',
+    password: 'your_db_password',
+    database: 'your_db_name',
+    host: '127.0.0.1',
+    dialect: 'postgres' 
   },
   production: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT || 'mysql'
+    use_env_variable: 'DATABASE_URL',
+    dialect: 'postgres', 
   }
 };
