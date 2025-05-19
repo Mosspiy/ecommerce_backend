@@ -1,13 +1,15 @@
+
 module.exports = {
   development: {
-    username: 'your_db_user',
-    password: 'your_db_password',
-    database: 'your_db_name',
-    host: '127.0.0.1',
-    dialect: 'postgres' 
+    url: process.env.DATABASE_URL,
+    dialect: 'postgres'
+  },
+  test: {
+    url: process.env.DATABASE_URL,
+    dialect: 'postgres'
   },
   production: {
-    use_env_variable: 'DATABASE_URL',
-    dialect: 'postgres', 
+    url: process.env.DATABASE_URL,
+    dialect: 'postgres'
   }
 };
