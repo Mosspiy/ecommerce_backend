@@ -279,7 +279,7 @@ app.get("/products", async (req, res) => {
       });
       product.updatedAt = formattedDate;
 
-      product.imageUrl = `http://localhost:3000/${product.imageUrl}`;
+      product.imageUrl = `${product.imageUrl}`;
     });
     res.json(products).status(200);
   } catch (error) {
